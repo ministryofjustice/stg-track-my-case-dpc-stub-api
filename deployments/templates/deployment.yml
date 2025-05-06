@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deployment
+  name: stg-track-my-case-dpc-stub-api-dev-deployment
   labels:
-    app: example
+    app: stg-track-my-case-dpc-stub-api-dev
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: example # this should match the selector in service.yml
+      app: stg-track-my-case-dpc-stub-api-dev # this should match the selector in service.yml
   template:
     metadata:
       labels:
-        app: example # this should match the selector in service.yml
+        app: stg-track-my-case-dpc-stub-api-dev # this should match the selector in service.yml
     spec:
       containers:
-        - name: example
+        - name: stg-track-my-case-dpc-stub-api-dev
           image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
           ports:
             - containerPort: 8080
